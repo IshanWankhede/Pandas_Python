@@ -8,11 +8,11 @@ df = pd.read_csv("data.csv", index_col="Name")
 
 # selection by column 
 
-print(df["Name"].to_string())  # series 
-print(df["Height"].to_string())
-print(df["Weight"].to_string())
+# print(df["Name"].to_string())  # series 
+# print(df["Height"].to_string())
+# print(df["Weight"].to_string())
 
-print(df[["Name", "Height", "Weight"]])
+# print(df[["Name", "Height", "Weight"]])
 
 # Selection by Rows
 
@@ -30,4 +30,22 @@ print(df[["Name", "Height", "Weight"]])
 # Name: 0, dtype: object
 
 
-print(df.loc["Pikachu"])
+# print(df.loc["Pikachu":"Nidoran♂", ["Height", "Weight"]])
+
+#            Height  Weight
+# Name
+# Pikachu       0.4     6.0
+# Raichu        0.8    30.0
+# Sandshrew     0.6    12.0
+# Sandslash     1.0    29.5
+# Nidoran♀      0.4     7.0
+# Nidorina      0.8    20.0
+# Nidoqueen     1.3    60.0
+# Nidoran♂      0.5     9.0
+
+pokemon = input("Enter The Name Of Pokemon: ")
+
+try:
+    print(df.loc[pokemon])
+except KeyError:
+    print(f"{pokemon} not Found")
