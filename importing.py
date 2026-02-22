@@ -2,6 +2,8 @@ import pandas as pd
 
 df = pd.read_csv("data.csv")
 
+# df = pd.read_json("")  for reading json file
+
 # print(df)
 
 # output
